@@ -1,0 +1,30 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}Add Task{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'base/task_form.css' %}">
+{% endblock style %}
+
+{% block content %}
+
+<section class="task__form__cont">
+
+    <h3>Task Form</h3>
+
+    <a href="{% url 'tasks' %}">
+        <span class="arrow">&lt;</span>
+        <span>Go back</span>
+    </a>
+
+    <form method="post" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn" type="submit">Add</button>
+    </form>
+
+</section>
+
+{% endblock content %}
+

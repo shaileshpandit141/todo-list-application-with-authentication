@@ -1,0 +1,29 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}Delation Confirmation{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'base/task_confirm_delete.css' %}">
+{% endblock style %}
+
+{% block content %}
+
+<section class="task__delete__cont">
+
+    <h3>Delation Confirmation?</h3>
+
+    <a href="{% url 'tasks' %}">
+        <span class="arrow">&lt;</span>
+        <span>Go back</span>
+    </a>
+
+    <form method="post">
+        {% csrf_token %}
+        <p>Are you sure do you want to delete this task ({{ task.title }})?</p>
+        <button class="btn">Delete</button>
+    </form>
+
+</section>
+
+{% endblock content %}

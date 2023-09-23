@@ -1,0 +1,34 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}Register{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'base/register.css' %}">
+{% endblock style %}
+
+{% block content %}
+
+<section class="register__cont">
+
+    <h3>Register</h3>
+
+    <form method="post" action="">
+        {% csrf_token %}
+        {% comment %} {{ form.as_p }} {% endcomment %}
+        {% for field in form %}
+        <div class='{% if field.errors %}errors{% endif %}'>
+            {{ field.label_tag }}
+            {{ field }}
+            {{ field.errors }}
+        </div>
+        {% endfor %}
+        <button class="btn">Register</button>
+    </form>
+
+    <p class="down__text">Already have an account? <a href="{% url 'login' %}">Login</a></p>
+    
+</section>
+
+{% endblock content %}
+

@@ -1,0 +1,184 @@
+.task__list__cont {
+    width: 100%;
+    padding-bottom: 1rem;
+    background-color: #fff;
+    overflow: hidden;
+    border-radius: inherit;
+}
+
+.task__list__cont h1,
+.task__list__cont p,
+.task__list__cont a {
+    text-decoration: none;
+    letter-spacing: 0.05em;
+}
+
+.task__list__cont .header__cont {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 2.5rem;
+    border-bottom: 2px solid #0000003d;
+    background-color: #2c2c2c;
+    color: white;
+}
+
+.header__cont p {
+    font-size: 1.5rem;
+    margin-right: 2rem;
+}
+
+.header__cont p span {
+    font-weight: 600;
+}
+
+.header__cont p i {
+    font-size: 1rem;
+}
+
+.header__cont a {
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.task__list__title {
+    padding: 1rem 2.5rem;
+    font-size: 1.5rem;
+}
+
+.task__search__cont {
+    padding: 0 2.5rem;
+    margin: .5rem 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task__search__cont form {
+    display: flex;
+}
+
+.task__search__cont form input {
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    border: 1.5px solid #0000003d;
+    outline: none;
+    border-radius: 25px 0 0 25px;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.task__search__cont form input:focus,
+.task__search__cont form input:hover {
+    border: 1.5px solid #0000009d;
+    background-color: #e9e9e9;
+}
+
+.task__search__cont form button {
+    background-color: #fff;
+    padding: .5rem 1rem;
+    border: 1.5px solid #0000003d;
+    cursor: pointer;
+    border-radius: 0 25px 25px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    transition: background-color 0.3s;
+}
+
+.task__search__cont form button:focus,
+.task__search__cont form button:hover {
+    border: 1.5px solid #0000009d;
+    background-color: #e9e9e9;
+}
+
+.task__search__cont a {
+    color: #000;
+    margin: 0 .5rem;
+    padding: 0 .5rem;
+    font-size: 2rem;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.task__search__cont a:focus,
+.task__search__cont a:hover {
+    background-color: #e9e9e9;
+}
+
+
+.incomplete__task {
+    width: 100%;
+    padding: 1rem 2.5rem;
+    opacity: .8;
+}
+
+
+.task__cont {
+    padding: 0 2.5rem;
+}
+
+.task__cont .task {
+    margin-bottom: 10px;
+    font-size: 18px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.task__cont .task .task__a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5rem 0;
+    width: 100%;
+    color: #000;
+}
+
+.main__title__circle__cont {
+    display: flex;
+    align-items: center;
+}
+
+.task__cont .task .title {
+    margin: 0 .5rem 0 .5rem;
+}
+
+.task__cont .task .date {
+    margin: 0 .5rem 0 .5rem;
+    font-style: italic;
+    font-size: 1rem;
+    opacity: .8;
+}
+
+.task__cont .task .delete__cont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.task__cont .task .delete__cont .delete {
+    color: #000;
+    padding: 0 .5rem;
+    font-size: 2rem;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.task__cont .task .delete:focus,
+.task__cont .task .delete:hover {
+    background-color: #e9e9e9;
+}
+
+.task__cont .task .task__circle {
+    position: relative;
+    background-color: #e9e9e9;
+    min-width: 20px;
+    height: 20px;
+    border-radius: 25px;
+}

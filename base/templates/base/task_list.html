@@ -1,0 +1,66 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}Task List{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'base/task_list.css' %}">
+{% endblock style %}
+
+{% block content %}
+
+<section class="task__list__cont">
+
+    <div class="header__cont">
+        <p>
+            <span>Welcome</span>
+            <i>{{ request.user|title }}</i>
+        </p>
+
+        {% if request.user.is_authenticated %}
+        <a href="{% url 'logout' %}">Logout</a>
+        {% else %}
+        <a href="{% url 'login' %}">Login</a>
+        {% endif %}
+    </div>
+
+    <h1 class="task__list__title">Task List</h1>
+
+    <div class="task__search__cont">
+        <form method="get">
+            <input type="text" name="search-area", value="{{ search_input }}">
+            <button>Search</button>
+        </form>
+        <a href="{% url 'task-create' %}">&plus;</a>
+    </div>
+
+    <div class="incomplete__task">
+        <p>You have <i>{{ count }}</i> incomplete task{{ count|pluralize:"s" }}.</p>
+    </div>
+
+
+    <div class="task__cont">
+        {% for task in tasks %}
+        <div class="task">
+            <a class="task__a" href="{% url 'task-update' task.id %}">
+                <div class="main__title__circle__cont">
+                    <div class="task__circle" style="{% if task.complete %}background-color: green;{% endif %}"></div>
+                    <p class="title">{{ task.title|title }}</p>
+                </div>
+                <p class="date">({{ task.create|date }})</p>
+            </a>
+            <div class="delete__cont">
+                <a class="delete" href="{% url 'task-delete' task.id %}">&times;</a>
+            </div>
+        </div>
+
+        {% empty %}
+        <p>No items in Task list.</p>
+        
+        {% endfor %}
+    </div>
+
+</section>
+
+{% endblock content %}
+

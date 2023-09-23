@@ -1,0 +1,19 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}{{ task }}{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'base/task_detail.css' %}">
+{% endblock style %}
+
+{% block content %}
+
+<section class="task__detail__cont">
+    
+    <h1>Task: {{ task }}</h1>
+
+</section>
+
+{% endblock content %}
+
